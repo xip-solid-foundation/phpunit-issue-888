@@ -18,27 +18,10 @@ class UserControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
 
-    protected function setUp(): void
-    {
-        $this->client = static::createClient();
-    }
-
     public function testIndex(): void
     {
-        $this->client->request('GET', '/user/');
-        self::assertTrue($this->client->getResponse()->isOk());
-
-        $this->client->request('GET', '/user/new');
-        $this->client->submitForm('Save', [
-            'user[email]' => 'Demo@USER.com',
-            'user[password]' => 'NL',
-        ]);
-
-        $this->assertResponseRedirects('/user/');
-
-        $em = $this->client->getContainer()->get('doctrine')->getManager();
-        $user = $em->getRepository(User::class)->findOneBy(['email' => 'Demo@USER.com']);
-        $em->remove($user);
-        $em->flush();
+        $client = static::createClient();
+        $client->request('GET', '/user/');
+        self::assertTrue($client->getResponse()->isOk());
     }
 }
