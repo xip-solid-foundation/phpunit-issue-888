@@ -16,8 +16,6 @@ class UserControllerTest extends TestCase
 {
     public function testIndex(): void
     {
-        $controller = new UserController;
-        $response = $controller->index();
-        self::assertTrue($response->isOk());
+        $this->assertSame('test', (new UserController)->index());
     }
 }

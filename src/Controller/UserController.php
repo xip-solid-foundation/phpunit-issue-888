@@ -2,15 +2,12 @@
 
 namespace App\Controller;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 class UserController
 {
-    public function index(): Response
+    public function index(): string
     {
-        return new Response('OK');
+        return (new User())->getSomething();
     }
 }
