@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  * @covers \App\Form\UserType
  *
  * @uses \App\Entity\User
- * @uses \App\Repository\UserRepository
  */
 class UserControllerTest extends WebTestCase
 {

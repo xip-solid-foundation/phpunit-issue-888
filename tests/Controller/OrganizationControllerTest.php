@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  * @covers \App\Form\OrganizationType
  *
  * @uses \App\Entity\Organization
- * @uses \App\Repository\OrganizationRepository
  */
 class OrganizationControllerTest extends WebTestCase
 {

@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Organization;
 use App\Form\OrganizationType;
-use App\Repository\OrganizationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,10 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class OrganizationController extends AbstractController
 {
     #[Route('/', name: 'organization_index', methods: ['GET'])]
-    public function index(OrganizationRepository $organizationRepository): Response
+    public function index(EntityManagerInterface $entityManager): Response
     {
         return $this->render('organization/index.html.twig', [
-            'organizations' => $organizationRepository->findAll(),
+            'organizations' => $entityManager->getRepository(Organization::class)->findAll(),
         ]);
     }
 

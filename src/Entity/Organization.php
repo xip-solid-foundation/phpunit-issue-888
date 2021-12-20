@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\OrganizationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: OrganizationRepository::class)]
+#[ORM\Entity()]
 class Organization
 {
     #[ORM\Id]
