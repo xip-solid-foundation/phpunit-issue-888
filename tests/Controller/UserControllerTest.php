@@ -9,8 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \App\Controller\UserController
- *
- * @uses \App\Entity\User
  */
 class UserControllerTest extends TestCase
 {
